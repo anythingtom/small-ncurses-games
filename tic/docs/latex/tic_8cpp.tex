@@ -1,0 +1,129 @@
+\hypertarget{tic_8cpp}{}\doxysection{src/tic.cpp File Reference}
+\label{tic_8cpp}\index{src/tic.cpp@{src/tic.cpp}}
+
+
+Game written in c++.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tic_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init}} ()
+\begin{DoxyCompactList}\small\item\em Draw borders at the start of the game, and initialize a few other things / Vẽ bảng vào đầu game, và chuẩn bị vài thứ khác. \end{DoxyCompactList}\item 
+short int \mbox{\hyperlink{tic_8cpp_af7c7a63064795334dc9e0ef30c812409}{check\+\_\+winner}} (char c1, char c2, char c3)
+\begin{DoxyCompactList}\small\item\em Return the winner number. / Trả về giá trị đại diện cho người chơi thắng. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{tic_8cpp_a206c6b79f6c6ba5d809fa4136a9533e8}{check\+\_\+and\+\_\+exit}} (short int play)
+\begin{DoxyCompactList}\small\item\em Banner for endgame! / Vẽ 1 cái Banner để endgame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{tic_8cpp_a3f27d045d40509ccc74138c4fc0324f3}{is\+\_\+not\+\_\+full}} (char cell\mbox{[}3\mbox{]}\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em Use to check if the in-\/game cell grid is not full, mainly for tie-\/checking / Check xem bảng đã đầy chưa, chủ yếu để kiểm tra hòa hay không. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{tic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main activity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game written in c++. 
+
+This is the Tic\+Tac\+Toe game, implemented in C++. Documentation is available in English and Vietnamese
+
+Game Tic\+Tac\+Toe viết bằng C++ Tư liệu có Tiếng Việt và Tiếng Anh 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tic_8cpp_a206c6b79f6c6ba5d809fa4136a9533e8}\label{tic_8cpp_a206c6b79f6c6ba5d809fa4136a9533e8}} 
+\index{tic.cpp@{tic.cpp}!check\_and\_exit@{check\_and\_exit}}
+\index{check\_and\_exit@{check\_and\_exit}!tic.cpp@{tic.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_and\_exit()}{check\_and\_exit()}}
+{\footnotesize\ttfamily void check\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{short int}]{play }\end{DoxyParamCaption})}
+
+
+
+Banner for endgame! / Vẽ 1 cái Banner để endgame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em play} & Winner\textquotesingle{}s ID\\
+\hline
+\end{DoxyParams}
+Used in conjunction with the check() function, display a banner according to the game\textquotesingle{}s ending status
+
+Sử dụng cùng với hàm check(), vẽ 1 cái banner dựa trên kết thúc game. \mbox{\Hypertarget{tic_8cpp_af7c7a63064795334dc9e0ef30c812409}\label{tic_8cpp_af7c7a63064795334dc9e0ef30c812409}} 
+\index{tic.cpp@{tic.cpp}!check\_winner@{check\_winner}}
+\index{check\_winner@{check\_winner}!tic.cpp@{tic.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_winner()}{check\_winner()}}
+{\footnotesize\ttfamily short int check\+\_\+winner (\begin{DoxyParamCaption}\item[{char}]{c1,  }\item[{char}]{c2,  }\item[{char}]{c3 }\end{DoxyParamCaption})}
+
+
+
+Return the winner number. / Trả về giá trị đại diện cho người chơi thắng. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c1} & \\
+\hline
+{\em c2} & \\
+\hline
+{\em c3} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if P1 wins, 2 if P2 wins, 0 if match is unfinished or tie / 1 nếu N1 thắng, 2 nếu N2 thắng, 0 nếu hòa hoặc chưa ai thắng 
+\end{DoxyReturn}
+\mbox{\Hypertarget{tic_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}\label{tic_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}} 
+\index{tic.cpp@{tic.cpp}!init@{init}}
+\index{init@{init}!tic.cpp@{tic.cpp}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draw borders at the start of the game, and initialize a few other things / Vẽ bảng vào đầu game, và chuẩn bị vài thứ khác. 
+
+But look, these borders are ugly as hell. Refactoring? Hell I won\textquotesingle{}t
+
+Mặc dù cái bảng này nhìn xấu nhưng tôi còn lâu mới refactor \mbox{\Hypertarget{tic_8cpp_a3f27d045d40509ccc74138c4fc0324f3}\label{tic_8cpp_a3f27d045d40509ccc74138c4fc0324f3}} 
+\index{tic.cpp@{tic.cpp}!is\_not\_full@{is\_not\_full}}
+\index{is\_not\_full@{is\_not\_full}!tic.cpp@{tic.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_not\_full()}{is\_not\_full()}}
+{\footnotesize\ttfamily bool is\+\_\+not\+\_\+full (\begin{DoxyParamCaption}\item[{char}]{cell\mbox{[}3\mbox{]}\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Use to check if the in-\/game cell grid is not full, mainly for tie-\/checking / Check xem bảng đã đầy chưa, chủ yếu để kiểm tra hòa hay không. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}} & The in-\/game cell grid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cell grid is not full, False if otherwise / True nếu bảng đã đầy, False nếu chưa
+\end{DoxyReturn}
+For some reason I have to check both cell\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} and cell\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}.
+
+Vì 1 lý do nào đó tôi phải chọn cả cell\mbox{[}i\mbox{]}\mbox{[}j\mbox{]} và cell\mbox{[}j\mbox{]}\mbox{[}i\mbox{]}. \mbox{\Hypertarget{tic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{tic_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{tic.cpp@{tic.cpp}!main@{main}}
+\index{main@{main}!tic.cpp@{tic.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main activity. 
+
+Program is divided into 3 parts\+:
+
+Initialization\+: init values for visuals(vx, vy, x, y), and functionality(kx, ky, cell\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, inp).
+
+Execution\+: the do...while() loop, running the game until a tie or someone wins.
+
+Ending\+: Do some last stuff.
+
+Phần mềm chia ra làm 3 phần\+:
+
+Khởi tạo\+: Khởi tạo giá trị để thể hiện lên màn hình(vx, vy, x, y), thể hiện chức năng(kx, ky, cell\mbox{[}3\mbox{]}\mbox{[}3\mbox{]}, inp).
+
+Thực hiện\+: vòng lặp do...while(), chạy game cho đến khi có người thắng hoặc hòa.
+
+Kết thúc\+: thực hiện 1 số bước cuối cùng. 
