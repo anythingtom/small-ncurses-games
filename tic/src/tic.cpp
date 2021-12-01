@@ -11,6 +11,9 @@
 #include <vector>
 #include <cctype>
 #include <ncurses.h>
+
+const int Player1Wins = 1;
+const int Player2Wins = -1;
 /**
  * @brief Init the game components. Function initially in main() but moved
  * 
@@ -53,10 +56,10 @@ void init(){
 
 short int check_winner(char c1, char c2, char c3){
 	if(c1 == c2 && c2 == c3 && c3 == 'X'){
-		return 1;
+		return Player1Wins;
 	}
 	else if (c1 == c2 && c2 == c3 && c3 == 'O'){
-		return 2;
+		return Player2Wins;
 	}
 	return 0;
 }
@@ -69,23 +72,32 @@ short int check_winner(char c1, char c2, char c3){
 
 void check_and_exit(short int play){
 	attron(COLOR_PAIR(4));
-	if (play == 1 || play == 2){
+	if (play > 0){
 		mvprintw(9, 0,  "*******************************");
 		mvprintw(10, 0, "*                             *");
-		mvprintw(11, 0, "*       PLAYER %d WINS!!       *", play);
-		mvprintw(12, 0, "*       PLAYER %d LOSES!!      *", 3 - play);
+		mvprintw(11, 0, "*       PLAYER 1 WINS!!       *");
+		mvprintw(12, 0, "*       PLAYER 2 LOSES!!      *");
+		mvprintw(13, 0, "*                             *");
+		mvprintw(14, 0, "*******************************");
+		mvprintw(15, 0, "Press any key to exit.");
+	}
+	else if (play < 0){
+		mvprintw(9, 0,  "*******************************");
+		mvprintw(10, 0, "*                             *");
+		mvprintw(11, 0, "*       PLAYER 2 WINS!!       *");
+		mvprintw(12, 0, "*       PLAYER 1 LOSES!!      *");
 		mvprintw(13, 0, "*                             *");
 		mvprintw(14, 0, "*******************************");
 		mvprintw(15, 0, "Press any key to exit.");
 	}
 	else {
-		mvprintw(9,  0, "*******************************");
+		mvprintw(9, 0,  "*******************************");
 		mvprintw(10, 0, "*                             *");
 		mvprintw(11, 0, "*             TIE!            *");
-		mvprintw(12, 0, "*         NO ONE WINS!        *");
+		mvprintw(12, 0, "*                             *");
 		mvprintw(13, 0, "*                             *");
 		mvprintw(14, 0, "*******************************");
-		mvprintw(15, 0,"Press any key to exit.");
+		mvprintw(15, 0, "Press any key to exit.");
 	}
 	attroff(COLOR_PAIR(4));
 }
@@ -149,8 +161,8 @@ int main(){
 				if (ky > 2) ky = 2;
 				break;
 			case 'q': //let's blow some colors into this thing
-				attroff(COLOR_PAIR(inp ? 2 : 1));
-				attron(COLOR_PAIR(inp ? 1 : 2));
+				attroff(COLOR_PAIR(inp + 1);
+				attron(COLOR_PAIR(inp + 1));
 				echo(); addch(inp ? 'X' : 'O');
 				cell[ky][kx] = inp ? 'X' : 'O';
 				inp = !inp;
