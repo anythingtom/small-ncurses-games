@@ -30,7 +30,7 @@ std::vector<std::string> hangman = {
 
 
 /**
- * @brief making this because C++ COULD have some simple operatpr but cba
+ * @brief making this because C++ COULD have some simple operators but cba
  *
  * @param c char for checking
  * @param s string for checking
