@@ -1,4 +1,4 @@
-#include <ios>
+#include <list>
 #include <string>
 #include <vector>
 #include <cstdlib>
@@ -28,6 +28,15 @@ std::vector<std::string> hangman = {
 	"---",
 };
 
+
+/**
+ * @brief making this because C++ COULD have some simple operatpr but cba
+ *
+ * @param c char for checking
+ * @param s string for checking
+ *
+ * @return 
+ */
 bool charInString(char c, std::string s){
 	for (char i : s){
 		if (i == c){
@@ -43,9 +52,8 @@ int main(){
 	std::cin >> guess;
 	std::string display;
 	for (int i = 0; i < guess.length(); i++){
-		display += "_ "; 
+		display += "_"; 
 	}
-	display.pop_back();
 	char c;
 	int mistakes = hangman.size();
 	while (mistakes > 0){
@@ -53,7 +61,9 @@ int main(){
 		std::cout << "Enter character: ";
 		std::cin >> c;
 		for (int i = 0; i < guess.length(); i++){
-
+			if (charInString(c, guess)){
+				for (int i = 0; i < )
+			}
 		}
 	}
 }
