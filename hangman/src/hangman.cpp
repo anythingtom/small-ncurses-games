@@ -28,6 +28,7 @@ std::vector<std::string> hangman = {
 	"---",
 };
 
+const int max_mistakes = hangman.size();
 
 /**
  * @brief making this because C++ COULD have some simple operators but cba
@@ -47,23 +48,8 @@ bool charInString(char c, std::string s){
 }
 
 int main(){
-	std::string guess;
-	std::cout << "Enter input string: ";
-	std::cin >> guess;
-	std::string display;
-	for (int i = 0; i < guess.length(); i++){
-		display += "_"; 
-	}
-	char c;
-	int mistakes = hangman.size();
-	while (mistakes > 0){
-		system("clear");
-		std::cout << "Enter character: ";
-		std::cin >> c;
-		for (int i = 0; i < guess.length(); i++){
-			if (charInString(c, guess)){
-				for (int i = 0; i < )
-			}
-		}
-	}
+	std::string guess, display;
+	int current_mistakes = 0;
+	
+
 }
