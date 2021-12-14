@@ -51,7 +51,9 @@ int main(){
 	std::string guess, display;
 	int current_mistakes = 0;
 	while (current_mistakes < max_mistakes){
-		//First output the hangman len
-		
+		//First output the hangman length
+		for (int i = 0; i < current_mistakes; i++){
+			std::cout << hangman[i] << std::endl;
+		}
 	}
 }
