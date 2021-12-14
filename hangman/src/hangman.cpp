@@ -50,6 +50,8 @@ bool charInString(char c, std::string s){
 int main(){
 	std::string guess, display;
 	int current_mistakes = 0;
-	
-
+	while (current_mistakes < max_mistakes){
+		//First output the hangman len
+		
+	}
 }
