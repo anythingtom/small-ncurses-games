@@ -1,4 +1,3 @@
-#include <list>
 #include <string>
 #include <vector>
 #include <cstdlib>
@@ -18,6 +17,7 @@
  */
 
 std::vector<std::string> hangman = {
+	"",
 	" -------",
 	" |     |",
 	" |     |",
@@ -29,6 +29,18 @@ std::vector<std::string> hangman = {
 };
 
 const int max_mistakes = hangman.size();
+
+/**
+ * @brief clears the screen
+ * 
+ */
+void clrscr(){
+	#ifdef _WIN32
+		system("cls");
+	#elif __linux__
+		system("clear");
+	#endif 
+}
 
 /**
  * @brief making this because C++ COULD have some simple operators but cba
@@ -50,10 +62,22 @@ bool charInString(char c, std::string s){
 int main(){
 	std::string guess, display;
 	int current_mistakes = 0;
+	char ug; bool kt = false;
+	std::cout << "Enter guess string: ";
+	std::cin >> guess;
+	for (int i = 0; i < guess.length(); i++){
+		display += "_";
+	}
+	clrscr();
 	while (current_mistakes < max_mistakes){
 		//First output the hangman length
 		for (int i = 0; i < current_mistakes; i++){
 			std::cout << hangman[i] << std::endl;
+		}
+		std::cout << max_mistakes - current_mistakes << " More mistakes and you will lose!\nEnter char: ";
+		std::cin >> ug;
+		for (int i = 0; i < guess.length(); i++){
+			
 		}
 	}
 }
