@@ -77,7 +77,10 @@ int main(){
 		std::cout << max_mistakes - current_mistakes << " More mistakes and you will lose!\nEnter char: ";
 		std::cin >> ug;
 		for (int i = 0; i < guess.length(); i++){
-			
+			if (guess[i] == ug){
+				kt = true;
+				display[i] = ug;
+			}
 		}
 	}
 }
