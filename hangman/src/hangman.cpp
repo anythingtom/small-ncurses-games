@@ -1,3 +1,4 @@
+#include <iterator>
 #include <string>
 #include <vector>
 #include <cstdlib>
@@ -28,7 +29,7 @@ std::vector<std::string> hangman = {
 	"---",
 };
 
-const int max_mistakes = hangman.size();
+int max_mistakes = hangman.size();
 
 /**
  * @brief clears the screen
@@ -74,13 +75,18 @@ int main(){
 		for (int i = 0; i < current_mistakes; i++){
 			std::cout << hangman[i] << std::endl;
 		}
-		std::cout << max_mistakes - current_mistakes << " More mistakes and you will lose!\nEnter char: ";
+		std::cout << display << std::endl;
+		std::cout << max_mistakes - current_mistakes << " More mistake(s) and you will lose!\nEnter char: ";
 		std::cin >> ug;
-		for (int i = 0; i < guess.length(); i++){
-			if (guess[i] == ug){
-				kt = true;
-				display[i] = ug;
+		if (charInString(ug, guess)){
+			for (int i = 0; i < guess.length(); i++){
+				if (guess[i] == ug){	
+					display[i] = ug;
+				}
 			}
+		} else {
+			current_mistakes++;
+			clrscr();
 		}
 	}
 }
