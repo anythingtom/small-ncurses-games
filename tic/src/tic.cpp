@@ -161,7 +161,7 @@ int main(){
 				if (ky > 2) ky = 2;
 				break;
 			case 'q': //let's blow some colors into this thing
-				attroff(COLOR_PAIR(inp + 1);
+				attroff(COLOR_PAIR(inp + 1));
 				attron(COLOR_PAIR(inp + 1));
 				echo(); addch(inp ? 'X' : 'O');
 				cell[ky][kx] = inp ? 'X' : 'O';
